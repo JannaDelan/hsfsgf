@@ -21,7 +21,7 @@ const WelcomeScreen = () => {
 
         <Text style={styles.title}>Welcome</Text>
         {/* Centering the subtitle */}
-        <Text style={[styles.subtitle, { textAlign: "center" }]}>Discover the World of Anime</Text>
+        <Text style={[styles.subtitle, { textAlign: "center" }]}>Coffee LOVERS</Text>
 
         <TouchableOpacity style={styles.button} onPress={onSignUp}>
           <Text style={styles.buttonText}>Sign Up</Text>
@@ -48,28 +48,28 @@ const styles = StyleSheet.create({
   container: {
     width: "80%",
     padding: 20,
-    backgroundColor: "rgba(0, 0, 0, 0.6)", // Semi-transparent black background
+    backgroundColor: "transparent", // Semi-transparent black background
     borderRadius: 5,
     alignItems: "center",
   },
   logo: {
     width: 300,
-    height: 100,
-    marginBottom: 20,
+    height: 80,
+    marginBottom: 10,
   },
   title: {
     fontSize: 30,
     fontWeight: "bold",
-    color: "white",
+    color: "black",
     marginBottom: 10,
   },
   subtitle: {
     fontSize: 18,
-    color: "white",
+    color: "black",
     marginBottom: 20,
   },
   button: {
-    backgroundColor: "rgba(255, 0, 0, 0.8)",
+    backgroundColor: "grey",
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 15,
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "white",
+    color: "black",
     textAlign: "center",
   },
   loginContainer: {
@@ -86,12 +86,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   loginText: {
-    color: "white",
+    color: "black",
     fontWeight: "bold",
   },
   loginLink: {
     fontWeight: "bold",
-    color: "rgba(255, 0, 0, 0.8)",
+    color: "blue",
     marginLeft: 5,
   },
 });

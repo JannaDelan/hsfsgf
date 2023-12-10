@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, ImageBackground, TextInput, Alert } from 'react-native';
+import { View, Text, TouchableOpacity, ImageBackground, TextInput } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ArrowLeftIcon } from 'react-native-heroicons/solid';
-import { colorBackgroundTheme } from '../theme';
 import { useNavigation } from '@react-navigation/native';
 
 export default function LoginScreen() {
@@ -10,37 +9,15 @@ export default function LoginScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = async () => {
-    if (email && password) {
-      try {
-        const response = await fetch('http://192.168.1.63:8000/api/auth/login', {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ email: email, password: password }),
-        });
-
-        const result = await response.json();
-        console.log('Success:', result);
-
-        if (response.status === 200) {
-          await navigation.navigate('Home');
-          console.log('Success');
-          setEmail('');
-          setPassword('');
-        }
-      } catch (error) {
-        console.error('Error during login:', error);
-        Alert.alert('Error', 'An error occurred during login');
-      }
-    }
+  const handleLoginPress = () => {
+    // Add your authentication logic here if needed
+    // For now, just navigate to the Home screen
+    navigation.navigate('Home');
   };
 
   return (
     <ImageBackground
-      source={require('../assets/images/boa.png')}
+      source={require('../assets/images/cafe.png')}
       style={{ flex: 1 }}
       resizeMode="cover"
     >
@@ -51,10 +28,7 @@ export default function LoginScreen() {
               <ArrowLeftIcon size={30} color="white" font="bold" />
             </TouchableOpacity>
           </View>
-          <View style={{ flexDirection: 'row', justifyContent: 'center', marginBottom: 1 }}>
-            {/* You can remove the Image component as it's now the background */}
-          </View>
-
+          {/* The Image component is removed as it's now the background */}
           <View style={{ borderTopLeftRadius: 50, borderTopRightRadius: 50, flex: 1, backgroundColor: 'transparent', paddingHorizontal: 20, paddingTop: 20 }}>
             <View style={{ marginBottom: 20, marginTop: 25 }}>
               <Text style={styles.label}>Email Address</Text>
@@ -79,7 +53,7 @@ export default function LoginScreen() {
                 />
               </View>
             </View>
-            <TouchableOpacity onPress={handleSubmit} style={styles.button}>
+            <TouchableOpacity onPress={handleLoginPress} style={styles.button}>
               <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
             <View style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 20 }}>
@@ -97,7 +71,7 @@ export default function LoginScreen() {
 
 const styles = {
   label: {
-    color: 'gray',
+    color: 'black',
     marginLeft: 10,
   },
   inputContainer: {
@@ -111,7 +85,7 @@ const styles = {
   },
   button: {
     paddingVertical: 10,
-    backgroundColor: 'red',
+    backgroundColor: 'black',
     borderRadius: 20,
   },
   buttonText: {
@@ -121,11 +95,11 @@ const styles = {
     color: 'white',
   },
   secondaryText: {
-    color: 'gray',
+    color: 'black',
     fontWeight: 'bold',
   },
   SigningupText: {
-    color: 'red',
+    color: 'blue',
     fontWeight: 'bold',
     fontSize: 16,
   },

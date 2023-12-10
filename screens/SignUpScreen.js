@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import { colorBackgroundTheme } from '../theme';
 
 // Import your background image
-import BackgroundImage from '../assets/images/hinata.png';
+import BackgroundImage from '../assets/images/img.png';
 
 export default function SignUpScreen() {
   const navigation = useNavigation();
@@ -61,7 +61,7 @@ export default function SignUpScreen() {
             </TouchableOpacity>
           </View>
           <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
-            <Image source={require('../assets/images/woa.png')} style={{ width: 250, height: 150 }} />
+            <Image source={require('../assets/images/woa.png')} style={{ width: 400, height: 150 }} />
           </View>
 
           <View style={styles.container}>
@@ -100,7 +100,7 @@ export default function SignUpScreen() {
             <View style={styles.linkContainer}>
               <Text style={styles.linkText}>Already have an account?</Text>
               <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-                <Text style={[styles.LoginingText, { color: 'red' }]}> Login</Text>
+                <Text style={[styles.LoginingText, { color: 'blue' }]}> Login</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -128,14 +128,14 @@ const styles = {
   },
   input: {
     padding: 10,
-    backgroundColor: 'gray',
+    backgroundColor: 'transparent',
     borderRadius: 20,
     marginBottom: 10,
-    color: 'white',
+    color: 'black',
   },
   button: {
     paddingVertical: 10,
-    backgroundColor: 'blue',
+    backgroundColor: 'black',
     borderRadius: 20,
   },
   buttonText: {
@@ -150,11 +150,11 @@ const styles = {
     marginTop: 7,
   },
   linkText: {
-    color: 'gray',
+    color: 'black',
     fontWeight: 'bold',
   },
   LoginingText: {
-    color: 'gray',
+    color: 'black',
     fontWeight: 'bold',
     fontSize: 16
   },

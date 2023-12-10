@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { colorBackgroundTheme } from '../theme';
 import Button from '../Buttons/Button'; // Import the Button component
 import { useNavigation } from '@react-navigation/native';
+import { CubeTransparentIcon } from 'react-native-heroicons/solid';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -14,14 +15,14 @@ const HomeScreen = () => {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: colorBackgroundTheme.bg }}>
-      <ImageBackground source={require('../assets/images/op.png')} style={styles.backgroundImage} resizeMode="cover">
+    <SafeAreaView style={{ flex: 1, backgroundColor: CubeTransparentIcon.bg }}>
+      <ImageBackground source={require('../assets/images/bg.png')} style={styles.backgroundImage} resizeMode="cover">
         <View style={styles.container}>
           <View style={styles.logoContainer}>
-            <Image source={require('../assets/images/zoro.png')} style={styles.logoImage} />
+            <Image source={require('../assets/images/woa.png')} style={styles.logoImage} />
           </View>
           <View style={styles.imageContainer}>
-            <Image source={require('../assets/images/zoro0.png')} style={styles.welcomeImage} />
+            <Image source={require('../assets/images/cafe.png')} style={styles.welcomeImage} />
           </View>
           <Button text="Sign Out" type="TERTIARY" onPress={onPressSignOut} />
         </View>
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logoImage: {
-    width: 200,
+    width: 300,
     height: 100,
   },
   imageContainer: {
